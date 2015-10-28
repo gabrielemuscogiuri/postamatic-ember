@@ -1,0 +1,153 @@
+ <div class="row">
+ 	<form class="col s12">
+ 		<!-- MITTENTE -->
+ 		<div class="mittente">
+ 			<h3>Mittente</h3>
+
+ 			<div class="row">
+ 				<div class="input-field col s2">
+ 					<input id="sigla_mittente" type="text" class="validate" value="Spett.le">
+ 					<label for="sigla_mittente">Sigla</label>
+ 				</div>
+ 				<div class="input-field col s5">
+ 					<input id="nome_mittente" type="text" class="validate">
+ 					<label for="nome_mittente">Nome persona/azienda</label>
+ 				</div>
+ 				<div class="input-field col s5">
+ 					<input id="cognome_mittente" type="text" class="validate">
+ 					<label for="cognome_mittente">Cognome</label>
+ 				</div>
+ 			</div>
+
+ 			<div class="row">
+ 				<div class="input-field col s2">
+ 					<select>
+ 						<option value="Via">Via</option>
+ 						<option value="Corso">Corso</option>
+ 						<option value="Piazza">Piazza</option>
+ 						<option value="Largo">Largo</option>
+ 						<option value="Viale">Viale</option>
+ 						<option value="Lungomare">Lungomare</option>
+ 					</select>
+ 					<label>Tipologia</label>
+ 				</div>
+ 				<div class="input-field col s8">
+ 					<input id="indirizzo_mittente" type="text">
+ 					<label for="indirizzo_mittente">Indirizzo</label>
+ 				</div>
+ 				<div class="input-field col s2">
+ 					<input id="nc_mittente" type="text" class="validate">
+ 					<label for="nc_mittente">Numero civico</label>
+ 				</div>
+ 			</div>
+
+ 			<div class="row">
+ 				<div class="input-field col s2">
+ 					<input id="cap_mittente" type="text" class="validate" length="5">
+ 					<label for="cap_mittente">Cap</label>
+ 				</div>
+
+ 				<div class="input-field col s8">
+ 					<input id="citta_mittente" type="text">
+ 					<label for="citta_mittente">Citt&agrave;</label>
+ 				</div>
+ 				<div class="input-field col s2">
+ 					<input id="provincia_mittente" type="text" class="validate" value="LE">
+ 					<label for="provincia_mittente">Provincia</label>
+ 				</div>
+ 			</div>
+ 		</div>
+
+ 		<!-- DESTINATARIO -->
+ 		<div class="destinatario">
+ 			<h3>Destinatario</h3>
+ 			<div class="row">
+ 				<div class="input-field col s2">
+ 					<input id="sigla_destinatario" type="text" class="validate">
+ 					<label for="sigla_destinatario">Sigla</label>
+ 				</div>
+ 				<div class="input-field col s5">
+ 					<input id="nome_destinatario" type="text" class="validate">
+ 					<label for="nome_destinatario">Nome persona/azienda</label>
+ 				</div>
+ 				<div class="input-field col s5">
+ 					<input id="cognome_destinatario" type="text" class="validate">
+ 					<label for="cognome_destinatario">Cognome</label>
+ 				</div>
+ 			</div>
+
+ 			<div class="row">
+ 				<div class="input-field col s2">
+ 					<select>
+ 						<option value="Via">Via</option>
+ 						<option value="Corso">Corso</option>
+ 						<option value="Piazza">Piazza</option>
+ 						<option value="Largo">Largo</option>
+ 						<option value="Viale">Viale</option>
+ 						<option value="Lungomare">Lungomare</option>
+ 					</select>
+ 					<label>Tipologia</label>
+ 				</div>
+ 				<div class="input-field col s8">
+ 					<input id="indirizzo_destinatario" type="text">
+ 					<label for="indirizzo_destinatario">Indirizzo</label>
+ 				</div>
+ 				<div class="input-field col s2">
+ 					<input id="nc_destinatario" type="text" class="validate">
+ 					<label for="nc_destinatario">Numero civico</label>
+ 				</div>
+ 			</div>
+
+ 			<div class="row">
+ 				<div class="input-field col s2">
+ 					<input id="cap_destinatario" type="text" class="validate" length="5">
+ 					<label for="cap_destinatario">Cap</label>
+ 				</div>
+
+ 				<div class="input-field col s8">
+ 					<input id="citta_destinatario" type="text">
+ 					<label for="citta_destinatario">Citt&agrave;</label>
+ 				</div>
+ 				<div class="input-field col s2">
+ 					<input id="provincia_destinatario" type="text" class="validate" value="LE">
+ 					<label for="provincia_destinatario">Provincia</label>
+ 				</div>
+ 			</div>
+ 		</div>
+
+ 		<!-- ALTRE INFO -->
+ 		<div class="altreInfo">
+ 			<h3>Altre info</h3>
+ 			<div class="row">
+ 				<div class="input-field col s3">
+ 					<input id="data" type="date" class="datepicker">
+ 					<label for="data">Data</label>
+ 				</div>
+ 				<div class="input-field col s3">
+ 					<input id="peso" type="text" class="validate" value="0,20">
+ 					<label for="peso">Peso</label>
+ 				</div>
+ 				<div class="input-field col s6">
+ 					<input id="cb" type="text" class="validate" length="13">
+ 					<label for="cb">Codice a barre</label>
+ 				</div>
+ 			</div>
+ 		</div>
+
+ 		<button class="btn waves-effect waves-light" type="submit" name="compila" 
+ 		{{action "compila" post}} href="cartolina.htm">Genera cartolina
+ 			<i class="material-icons right"></i>
+ 		</button>
+ 	</form>
+ </div>
+
+ <script>
+ $(document).ready(function() {
+ 	$('select').material_select();
+ 	$('input').characterCounter();
+ 	$('.datepicker').pickadate({
+    	selectMonths: true, // Creates a dropdown to control month
+    	selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+ });
+ </script>
